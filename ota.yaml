@@ -65,22 +65,11 @@ tasks:
     safe_for_agent: true
     notes: Checks that Bundler reads the repo contract metadata and resolved Ruby platform.
   verify:
-    context: host
     category: test
     description: Aggregate baseline verification checks.
-    run: "true"
-    execution:
-      default_mode: native
-      modes:
-        native:
-          context: host
-        container:
-          context: app
-    depends_on:
-      - test
-    requirements:
-      toolchains:
-        - ruby
+    aggregate:
+      tasks:
+        - test
     safe_for_agent: true
     notes: Contract-level verification path for this Discourse slice.
 workflows:
