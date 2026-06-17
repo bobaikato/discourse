@@ -23,10 +23,12 @@ execution:
           - vendor/bundle
 toolchains:
   ruby:
-    provider: ruby
     version: '>=3.4,<3.5'
     package_managers:
       bundler: '2.6.4'
+    fulfillment:
+      source: ruby
+      mode: none
 tasks:
   setup:
     context: host
